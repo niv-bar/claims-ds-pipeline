@@ -1,0 +1,72 @@
+{
+  "severity": {
+    "features": [
+      "driver_age",
+      "dist_km",
+      "vehicle_age",
+      "vehicle_value_nis",
+      "insured_city_ses_cluster",
+      "garage_city_ses_cluster",
+      "driver_age_was_imputed",
+      "damage_type",
+      "car_manufacturer",
+      "insured_city_type",
+      "opened_by",
+      "garage_city_type"
+    ],
+    "best_params": {
+      "n_estimators": 200,
+      "learning_rate": 0.020105800546376732,
+      "num_leaves": 8,
+      "min_child_samples": 25,
+      "subsample": 0.6978753170579768,
+      "colsample_bytree": 0.865362571444793,
+      "reg_lambda": 1.6258592286865041
+    },
+    "test_metrics": {
+      "MAE": 2154.899663952884,
+      "RMSE": 2819.525311254671,
+      "WAPE": 0.2706882484316917,
+      "R2": 0.386239975940288
+    }
+  },
+  "choice": {
+    "features": [
+      "dist_km",
+      "log_dist_km",
+      "dist_rank",
+      "ses_delta",
+      "city_type_match",
+      "garage_manufacturer_share",
+      "garage_city_ses_cluster",
+      "insured_city_ses_cluster",
+      "garage_city_type",
+      "insured_city_type",
+      "opened_by",
+      "car_manufacturer"
+    ],
+    "best_params": {
+      "n_estimators": 300,
+      "learning_rate": 0.020378441581739508,
+      "num_leaves": 36,
+      "min_child_samples": 20,
+      "subsample": 0.8520091155081155,
+      "colsample_bytree": 0.6067051337885694,
+      "reg_lambda": 3.8474712213565283
+    },
+    "test_metrics": {
+      "recall@1": 0.445,
+      "recall@3": 0.7475,
+      "recall@5": 0.865,
+      "MRR": 0.6197606486033977,
+      "mean_rank": 3.125
+    }
+  },
+  "split": "chronological 80/20 by event_date",
+  "ranking_score": "p_norm - lam * cost_scaled (lam is a business knob)",
+  "versions": {
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.0",
+    "lightgbm": "4.7.0"
+  }
+}
